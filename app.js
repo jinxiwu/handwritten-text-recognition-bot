@@ -127,6 +127,10 @@ function handleSuccessResponse(session, text) {
 }
 
 function handleErrorResponse(session, error) {
-    session.send('Oops! Something went wrong. Try again later.');
+    if (error.error.code == 'InvalidImage') {
+        session.send('Image not valid. Supported image formats: JPEG, PNG and BMP.');
+    } else {
+        session.send('Oops! Something went wrong. Try again later.');
+    }
     console.error(error);
 }
