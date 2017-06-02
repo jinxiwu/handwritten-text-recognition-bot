@@ -1,0 +1,19 @@
+{
+  "name": "handwritingbot",
+  "version": "1.0.0",
+  "description": "Handwritten Text Recognition Bot",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Jinxi",
+  "license": "ISC",
+  "dependencies": {
+    "botbuilder": "^3.8.3",
+    "dotenv-extended": "^1.0.4",
+    "needle": "^1.6.0",
+    "restify": "^4.3.0",
+    "url": "^0.11.0",
+    "valid-url": "^1.0.9"
+  }
+}
