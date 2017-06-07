@@ -29,7 +29,7 @@ var bot = new builder.UniversalBot(connector,
     function(session) {
         if (hasImageAttachment(session)) {
             var stream = getImageStreamFromMessage(session.message);
-            session.send('Please wait...');
+            session.sendTyping();
             recognitionService
                 .getIdFromStream(stream)
                 .then(function (id) {
@@ -42,7 +42,7 @@ var bot = new builder.UniversalBot(connector,
         } else {
             var imageUrl = parseAnchorTag(session.message.text) ||
                 (validUrl.isUri(session.message.text) ? session.message.text : null);
-            session.send('Please wait...');
+            session.sendTyping();
             if (imageUrl) {
                 recognitionService
                     .getIdFromUrl(imageUrl)
